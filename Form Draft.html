@@ -16,21 +16,25 @@
         <div class="container">
         <form id="pet-form">
           <div class="form-group">
-            <label for="animal">Pet Type</label>
-            <br>
-            <select name="animal" id="animal" class="form-control form-control-lg mb-3">
-              <option selected value="select_pet_type">-Select Pet Type-</option>
-              <option value="cat">Cat</option>
-              <option value="dog">Dog</option>
-              <option value="reptile">Reptile</option>
-            </select>
-            <label>Gender</label><br>
-            <input type="radio" name="gender" value="Male">Male</input>
-            <input type="radio" name="gender" value="Female">Female</input>
-            <br>
-            <label>Location</label>
-            <input type="text" id="zip" class="form-control form-control-lg" placeholder="Enter your Zipcode" required pattern="[0-9]{5}">
-            <input type="submit" value="Find Pet" class="btn btn-dark btn-lg btn-block mt-3">
+            <div id="animal_field">
+              <label for="animal">Pet Type</label>
+              <select name="animal" id="animal" class="form-control form-control-lg mb-3">
+                <option selected value="select_pet_type">-Select Pet Type-</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="reptile">Reptile</option>
+              </select>
+            </div>
+            <div id="gender_field">
+              <label>Gender</label><br>
+              <input type="radio" name="gender" value="Male">Male</input>
+              <input type="radio" name="gender" value="Female">Female</input>
+            </div>
+            <div id="location_field">
+              <label>Location</label>
+              <input type="text" id="zip" class="form-control form-control-lg" placeholder="Enter your Zipcode" required pattern="[0-9]{5}">
+              <input type="submit" value="Find Pet" class="btn btn-dark btn-lg btn-block mt-3">
+            </div>
           </div>
         </form>
     
