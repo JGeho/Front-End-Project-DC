@@ -7,6 +7,8 @@ This argument helps the function determine what call it should be making to the 
 parameters: These are the parameters passed from the front end web form the user will be filling out. Once 
 the user has made there selections, it will be passed as an objet type that will be called as 
 part of the apiInfo() function call
+
+callType must be either "organizations/" or "animals/"
 */
 
 const fetch = require("node-fetch"); // load fetch via Package.json - lock file
