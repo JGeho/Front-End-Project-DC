@@ -1,7 +1,8 @@
 # Cool Cats Adoption!
 ## Yes you can adopt dogs too!
 
-![Site Logo](./assets/ "Site Logo")
+<img src = "./images/puss_in_boots_sad_eyes.jpg" alt = "sad cat big eyes" width = "400">
+
 
 This is our first DigitalCrafts bootcamp group project.  This project is a front-end pet adoption app.  The app will provide the following features:
 1) Home page will contain links that allow users to search by type of pet or organization.
@@ -11,9 +12,9 @@ This is our first DigitalCrafts bootcamp group project.  This project is a front
 
 ### Technologies
 
-1) AJAX (API calls)
+1) AJAX (API calls) with Node Fetch
 2) Bootstrap (CSS)
-3)  (JavaScript Library)
+3) (JavaScript Library)
 4) HTML
 
 ### API
