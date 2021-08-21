@@ -11,7 +11,7 @@ part of the apiInfo() function call
 
 const fetch = require("node-fetch"); // load fetch via Package.json - lock file
 
-function fetchPetFinderToken(callType, formObject) {
+function callPetAPI(callType, formObject) {
     key = 'GgdPCSfEYCzLyJd1uLgeQLWjkCTOdVMUSSLD1omb029ymoadOB'; // Key for API call
     secret = 'ii8uznG9qzjal2VUYn2zDiCW0sgaBVZPFwskL6h3'; // Secrete Key for API call
     fetch('https://api.petfinder.com/v2/oauth2/token', {
@@ -54,12 +54,12 @@ function apiInfo(callType, data, formObject) {
     });
 }
 
-
 function convertParaToString (formObject) {
     arrayObject = Object.entries(formObject) // Convert list of object into array of arrays
     let l = arrayObject.length; // Size of arrayObject
     parametersString = "?"; // Intialize value
-
+    /* TODO: Catch empty objects to prevent being 
+    included in the parameter string */
     for (i in arrayObject) { // Iterate paramets into string to be used in the API
         parametersString += arrayObject[i][0] + "=" + arrayObject[i][1]; // Add each object to the string
         if (i < (l - 1)) { // If not at the end of the parameters, add a & the end of the string
@@ -70,5 +70,5 @@ function convertParaToString (formObject) {
 }
 
 //Test calls
-var formObject = {'limit': 5, 'location' : 94040, 'distance': 50};
-fetchPetFinderToken('organizations/', formObject);
+var formObject = {'limit': 10, 'location' : 94040, 'distance': 100};
+callPetAPI('organizations/', formObject);
