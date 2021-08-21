@@ -46,8 +46,8 @@ function apiInfo(callType, data, formObject) {
         // return the api response as JSON
         return resp.json();
     }).then(function(data) {
-        // Log the data
-        console.log(data);
+        return data; // 
+        // JSON.name = callAPI(input);
     }).catch(function(err) {
         // Log any errors
         console.log('something went wrong API Call --', err);
@@ -70,5 +70,5 @@ function convertParaToString (formObject) {
 }
 
 //Test calls
-var formObject = {'limit': 10, 'location' : 94040, 'distance': 100};
-callPetAPI('organizations/', formObject);
+// var formObject = {'limit': 10, 'location' : 94040, 'distance': 100};
+// callPetAPI('organizations/', formObject);
