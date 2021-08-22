@@ -1,0 +1,56 @@
+//fetch("https://api.petfinder.com/v2/organizations").then(function(response){
+    return response.json()
+}).then(function(data){
+    console.log(data)
+//}
+
+<select id="animal" class="form-control form-control-lg mb-3">
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+              <option value="bird">Reptile</option>
+            </select>
+            <label>Gender</label><br>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+
+            async function start(){
+
+const data = await response.json()
+createOrgList(data.message)
+}
+
+start()
+function createOrgList(orgList) {
+    document.getElementById("organizations").innerHTML =   `
+    <select onchange>
+        <option>Choose an Organization</option>
+        ${Object.keys(orgList).map(function (org){
+            return `<option>${org}</option>`
+        }).join('')}
+    </select>
+
+    `
+}
+
+import fetchJsonp from 'fetch-jsonp';
+
+const orgList = document.querySelector('#org-form');
+
+orgList.addEventListener('submit', fetchOrg);
+
+//Get Organizations from API
+function fetchOrg(e){
+    e.preventDefault();
+
+fetch("https://api.petfinder.com/v2/organizations/{id}").then(function(response){
+    return response.json()
+}).then(function(data){
+    console.log(data)
+}
+
+//User Input
+const organization = document.querySelector('#organization').value
+const zip = document.querySelector('#zip').value
+
+//Fetch Organizations
+fetch

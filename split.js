@@ -29,5 +29,3 @@ function handleErrors(response) {
 }
 
 fetchPetFinderToken;
-
-
