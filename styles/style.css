@@ -1,2 +1,6 @@
 /* CSS Styling for the Front-End Project */
 
+#imagePet {
+    width: 150px;
+    height: auto;
+}

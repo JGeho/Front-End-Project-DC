@@ -49,17 +49,15 @@ function apiInfo(callType, data, formObject) {
         return resp.json();
     }).then(function(data) {
         if (callType == "organizations/") {
-            loadPetData(data);
-        } else {
             loadOrgData(data);
+        } else {
+            loadPetData(data);
         }
     }).catch(function(err) {
         // Log any errors
         console.log('something went wrong API Call --', err);
     });
 }
-
-// function to change DOM to display data
 
 function convertParaToString (formObject) {
     arrayObject = Object.entries(formObject) // Convert list of object into array of arrays
@@ -79,17 +77,3 @@ function convertParaToString (formObject) {
 //Test calls
 // var formObject = {'limit': 10, 'location' : 94040, 'distance': 100};
 // callPetAPI('organizations/', formObject);
-
-function animalDataForm() {
-    let petValue = document.getElementById("animalselect").value;
-    let genderValue = document.querySelector('input[id="gender"]:checked').value;
-    let zipValue = document.getElementById("zip").value;
-    let formObject = {
-      'type': petValue,
-      'gender' : genderValue,
-      'location' : zipValue
-    }
-    // Call api
-    console.log(formObject); // DEbug to rest return of object
-    console.log(callPetAPI('animals/', formObject));
-  }

@@ -12,7 +12,7 @@
 <body style="background-color: rosybrown;"></body>
     <h1 style="text-align: center; color:rgb(223, 175, 175)">Your Best Friend Awaits</h1>
     <header class="bg-light text-center mb-4 p-3">
-    <img src="#" alt="Find-A-Pet">
+    <img src="./images/adopt.jpg" alt="Find-A-Pet">
         </header>
         <div class="container">
         <form id="petForm" name="petForm">
@@ -28,15 +28,25 @@
             </div>
             <div id="genderField" name="genderField">
                 <label for="gender">Gender</label><br>
-                    <input type="radio" name="gender" value="Male">Male</input>
-                    <input type="radio" name="gender" value="Female">Female</input>
+                    <input type="radio" name="gender" id = "gender" value="Male">Male</input>
+                    <input type="radio" name="gender" id = "gender" value="Female">Female</input>
+                    <input type="radio" name="gender" id = "gender" value="male,female">Male or Female</input>
             </div>
             <div id="locationField" name="locationField">
                 <label for="location">Location</label>
                     <input type="text" id="zip" class="form-control form-control-lg" placeholder="Enter your Zip code" required pattern="[0-9]{5}">
             </div>
-            <button name = "submit" type = "button" onclick="formData()">Submit</button>
+            <button name = "submit" type = "button" onclick="animalDataForm()">Submit</button>
         </form>
-        <div id="results">Results Here:</div>
+        <script src="./scripts/scripts.js"></script>
+        <script src="./scripts/loadPetData.js"></script>
+        <br>
+        <br>
+        <span>Search results for: <span id= "formQueryParamters"></span></div>
+        <div class="container-fluid">
+            <div id = "gridDiv" class = "data-grid">
+
+            </div>
+        </div>
     </body>
 </html>
