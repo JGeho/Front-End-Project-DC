@@ -24,4 +24,5 @@ function orgDataLocation() { // Capture form parameters for City, State
 }
 
 // Load Information into the DOM through the API Call
-
+loadOrgData(data)
+    // Put DOM call in here
