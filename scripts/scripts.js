@@ -11,7 +11,7 @@ part of the apiInfo() function call
 callType must be either "organizations/" or "animals/"
 */
 
-const fetch = require("node-fetch"); // load fetch via Package.json - lock file
+// const fetch = require('node-fetch'); // load fetch via Package.json - lock file
 
 function callPetAPI(callType, formObject) {
     key = 'GgdPCSfEYCzLyJd1uLgeQLWjkCTOdVMUSSLD1omb029ymoadOB'; // Key for API call
@@ -48,8 +48,11 @@ function apiInfo(callType, data, formObject) {
         // return the api response as JSON
         return resp.json();
     }).then(function(data) {
-        return data; // 
-        // JSON.name = callAPI(input);
+        if (callType == "organizations/") {
+            loadOrgData(data);
+        } else {
+            loadPetData(data);
+        }
     }).catch(function(err) {
         // Log any errors
         console.log('something went wrong API Call --', err);
