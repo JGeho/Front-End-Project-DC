@@ -25,10 +25,12 @@ function loadPetData(data) {
   let animalsAPI = data['animals'];
   let length = animalsAPI.length;
   console.log(animalsAPI);
+  
   // Remove previous data 
-  // document.getElementById("gridDv").innerHTML = "";
+  document.getElementById("gridDv").innerHTML = "";
   let gridDv = document.getElementById("gridDiv");
-  // Iterate ober API Query, show information
+  
+  // Iterate over API Query, show information
   // TODO: Confirm that image works and doesn't 404 when loaded
   for (let i = 0; i < length; i++) {
     let picArrayLength = animalsAPI[i]['photos'].length;
@@ -45,7 +47,8 @@ function loadPetData(data) {
     imageDiv.id = "imagePet";
     imageDiv.src = picSrc;
     // TODO: If image fails to load, trouble shoot 4040
-    // imageDiv.onerror = imageError(imageDiv);
+    imageDiv.onerror = imageError(imageDiv);
+
     gridDv.appendChild(imageDiv);
 
     // Load information about pet
@@ -60,7 +63,8 @@ function loadPetData(data) {
 }
 
 function imageError(imageDiv) {
-  imageDiv.src = "../images/imageNA.jpg";
+  // On error for loading for the image, set image to "not availabe at this time"
+  imageDiv.src = "../images/image404Na.png";
 }
     /*
     const nameDiv = document.createElement("name");
