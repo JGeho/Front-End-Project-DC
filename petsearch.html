@@ -40,12 +40,19 @@
         </form>
         <script src="./scripts/scripts.js"></script>
         <script src="./scripts/loadPetData.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
+        </script>
         <br>
         <br>
         <span>Search results for: <span id= "formQueryParamters"></span></div>
+        <br>
         <div class="container-fluid">
             <div id = "gridDiv" class = "data-grid">
-
             </div>
         </div>
     </body>

@@ -1,21 +1,26 @@
-const { stringify }  = require("querystring");
-
 function animalDataForm() {
     let petValue = document.getElementById("animalselect").value;
     console.log(petValue);
     let genderValue = document.querySelector('input[id="gender"]:checked').value;
     let zipValue = document.getElementById("zip").value;
+    let sortValue = 'distance';
     let formObject = {
         'type': petValue,
         'gender' : genderValue,
-        'location' : zipValue
+        'location' : zipValue,
+        'sort': sortValue
     }
     //Call api
     console.log(formObject); // DEbug to rest return of object
     // Display search parameters to user
     spanDiv = document.getElementById('formQueryParamters');
-    spanDiv.innerHTML = JSON.stringify(formObject);
+    let sQuery = "";
+    for (var key in formObject) {
+        sQuery += key + " = " + formObject[key] + " ";
+      }
+    spanDiv.innerHTML = sQuery;
     
+    // Call API data
     callPetAPI('animals/', formObject);
   }
 
@@ -27,37 +32,40 @@ function loadPetData(data) {
   console.log(animalsAPI);
   
   // Remove previous data 
-  document.getElementById("gridDv").innerHTML = "";
+  // TODO: Gettign error on removing previous data
+  // document.getElementById("gridDv").innerHTML = "";
+
   let gridDv = document.getElementById("gridDiv");
   
   // Iterate over API Query, show information
   // TODO: Confirm that image works and doesn't 404 when loaded
-  for (let i = 0; i < length; i++) {
-    let picArrayLength = animalsAPI[i]['photos'].length;
-    if (picArrayLength > 1) {
-      picSrc = animalsAPI[i]['photos'][0]['small'];
-    } else if (picArrayLength == 0) {
-      picSrc = "../images/imageNA.jpg";
-    } else {
-      picSrc = animalsAPI[i]['photos']['small'];
-    }
-
-    // TODO: If image doesn't load properly, then return a "image not available" tag
+  for (let i = 0; i < length; i++) { // TODO: Show full pictures (length)
+    const rowDiv = document.createElement("row");
+    gridDv.appendChild(rowDiv);
+    let colDiv = document.createElement("col");
+    rowDiv.appendChild(colDiv);
+    
     const imageDiv = document.createElement("img");
     imageDiv.id = "imagePet";
-    imageDiv.src = picSrc;
-    // TODO: If image fails to load, trouble shoot 4040
-    imageDiv.onerror = imageError(imageDiv);
-
-    gridDv.appendChild(imageDiv);
-
+    // Check that photo exist for animal
+    let photos = animalsAPI[i]['photos'];
+    let picLength = Object.keys(photos).length;
+    // console.log(picLength);
+    if (picLength >= 1) { // If more than one photo exists
+        imageDiv.src = animalsAPI[i]['primary_photo_cropped']['small'];
+        console.log(photos['small']);
+      } else {
+        imageDiv.src = "../images/imageNA.jpg";
+      }
+    // imageDiv.onerror = imageError(imageDiv); //  TODO: If image fails to load, trouble shoot 4040
+    colDiv.appendChild(imageDiv);
     // Load information about pet
-    
-    let infoArray = ["name", "age", "size", "gender"]
+    let colDiv1 = document.createElement("col");  
+    let infoArray = ["name", "age", "size", "gender", "distance"]
     for (let j = 0; j < infoArray.length; j++) {
-      const infoDiv = document.createElement("div");
+      let infoDiv = document.createElement("div");
       infoDiv.innerHTML = String(infoArray[j]) + ": " + animalsAPI[i][infoArray[j]];
-      gridDv.appendChild(infoDiv);
+      colDiv1.appendChild(infoDiv);
     }
   }
 }
