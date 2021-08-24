@@ -1,5 +1,3 @@
-const { stringify } = require("querystring");
-
 function animalDataForm() {
     let petValue = document.getElementById("animalselect").value;
     console.log(petValue);
