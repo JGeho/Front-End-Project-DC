@@ -6,7 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>Organization Search</title>
+        <script>
+            $( function() {
+                $( "#tabs" ).tabs();
+            } );  
+        </script>
     </head>
     <body>
         <!--NavBar Start-->
@@ -139,10 +148,34 @@
                     </div>                    
                 </form>
             </fieldset>
+            <div id = "card" class="card mb-3" style="max-width: 720px;">
+                <div class="row g-0">
+                    <div id="image" class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div id="tabs">
+                            <ul>
+                            <li><a href="#tabs-1">General Information</a></li>
+                            <li><a href="#tabs-2">Mission Statement</a></li>
+                            <li><a href="#tabs-3">Link</a></li>
+                            </ul>
+                        <div id="tabs-1">
+                            <p></p>
+                        </div>
+                        <div id="tabs-2">
+                            <p></p>
+                        </div>
+                        <div id="tabs-3">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <script src="./scripts/scripts.js"></script>
             <script src="./scripts/loadOrgData.js"></script>
             
-            <div id="results"></div>
         </div>
     
     </body>
