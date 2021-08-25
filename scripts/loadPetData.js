@@ -34,14 +34,36 @@ function loadPetData(data) {
   // Remove previous data 
   // TODO: Gettign error on removing previous data
   // document.getElementById("gridDv").innerHTML = "";
-
-  let gridDv = document.getElementById("gridDiv");
   
+  /*
+
+  let gridDiv = document.getElementById("gridDiv");
+  let rowDiv = document.createElement("div");
+  rowDiv.class = "row";
+  gridDiv.appendChild(rowDiv);
+  let colDiv = document.createElement("div");
+  rowDid.append(colDiv);
+  let cardDiv = document.createElement("div");
+  cardDiv.class = "card text-white bg-primary mb-3";
+  colDiv.appendChild(cardDiv);
+  let imgDiv = document.createElement("img");
+  imgDiv.src = "../images/cat404.jpeg"
+  imgDiv.class = "card-img-top";
+  imgDiv.append(cardDiv);
+  let cardBody = document.createElement("div");
+  cardBody.class = "card-body";
+  cardBody.appned(cardDiv);
+
+  
+
   // Iterate over API Query, show information
   // TODO: Confirm that image works and doesn't 404 when loaded
+  
+  /* Keep old code for now, confirm that template will work 
   for (let i = 0; i < length; i++) { // TODO: Show full pictures (length)
     const rowDiv = document.createElement("row");
     gridDv.appendChild(rowDiv);
+
     let colDiv = document.createElement("col");
     rowDiv.appendChild(colDiv);
     
@@ -60,7 +82,7 @@ function loadPetData(data) {
     // imageDiv.onerror = imageError(imageDiv); //  TODO: If image fails to load, trouble shoot 4040
     colDiv.appendChild(imageDiv);
     // Load information about pet
-    let colDiv1 = document.createElement("col");  
+    const colDiv = document.createElement("col");  
     let infoArray = ["name", "age", "size", "gender", "distance"]
     for (let j = 0; j < infoArray.length; j++) {
       let infoDiv = document.createElement("div");
@@ -68,13 +90,14 @@ function loadPetData(data) {
       colDiv1.appendChild(infoDiv);
     }
   }
+  
 }
 
 function imageError(imageDiv) {
   // On error for loading for the image, set image to "not availabe at this time"
   imageDiv.src = "../images/image404Na.png";
 }
-    /*
+    
     const nameDiv = document.createElement("name");
     nameDiv.innerHTML = animalsAPI[i]["name"];
     gridDv.appendChild(nameDiv); */
