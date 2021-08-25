@@ -1,19 +1,17 @@
 /* CSS Styling for the Front-End Project */
 
-{
-    margin: 0;
-    padding: 0;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-
 #header{
     position: absolute;
     z-index: 10;
     width: 100%
 }
 
+body {
+    background-color: #219ebc;
+}
+
 .navbar{
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .navbar-brand{
