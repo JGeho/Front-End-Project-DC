@@ -4,30 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoption Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/style.css">
+    <title>Kool Kats Adoptions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles\style.css">
     <link rel="script" href="/scripts/scripts.js">
-    <body style="background-color: rosybrown;"></body>
+ <!--change-->
 </head>
-<body>
-    <div class="jumbotron text-center">
+<body style="background-color: rosybrown;"></body>
+  <!--Header Section -->
+  <section id="header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a href="#" class="navbar-brand">Logo</a>
+          <button class="navbar-toggler" type="button" data-target="navbarSupportedContent" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml auto">
+              <li class="nav-item active">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a href="#" class="nav-link">Organization Search</a>
+              </li>
+              <li class="nav-item active">
+                <a href="#" class="nav-link">Pet Search</a>
+              </li>
+              <li class="nav-item active">
+                <a href="#" class="nav-link">About Us</a>
+              </li>
+              </ul>
+          </div>
+        </div>
+    </div>
+
+    <!--Header Section End  -->
+    
+    <!-- Main Section -->
+    <section class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h2>Pet Adoption Stats</h2>
+
+          </div>
+        </div>
+      </div>
+
+    <!-- Main Section End-->
+  </section>
+  <div class="jumbotron text-center">
         <h1>Kool Kats Adoption</h1>
         <h3>But We Love Dogs Too</h3>
       </div>
       <img src="images\adopt.jpg" class="rounded mx-auto d-block" width="350" height="200">
       <br>
+
+
       <div class ="container">
-        <a href="petsearch.html"></a><img src="images\th2.jpg" class="float-left" width="300" height="200"></a>
-            <!--Place for background image #1-->
-        <a href="orgsearch.html" role="menuitem" class="navigation-list_item"></a>
-            <!--Place for background image #2-->
-            <img src="images\aspa.jpg" class="float-right" width="300" height="200">
+        <div class="row">
+          <div class = "col">
+            <div class ="row">
+              <a href="petsearch.html" role="menuitem" class="navigation-list_item">Search by Pet</a>
+              <img src="images\th2.jpg" class ="image-container" width="300" height="200">
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <a href="orgsearch.html" role="menuitem" class="navigation-list_item">Search by Organization</a>
+              <img src="images\aspa.jpg" class ="image-container" width="300" height="200">
+            </div>
+          </div>
         </div>
+          
+      </div>
+
+
         <br><br>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <img src="images\R.jpg" class="img-rounded" width="350" height="200">
           </div>
           <div class="col-sm-4">
@@ -38,16 +96,8 @@
             </div>
         </div>
       </div>
-    <div>
-        <a href="petsearch.html" role="menuitem" class="navigation-list_item">Search by Pet</a>
-        <!--Place for background image #1-->
-        <img src="#" alt="Picture of Dogs and Cats">
-    </div>
-    <div>
-        <a href="orgsearch.html" role="menuitem" class="navigation-list_item">Search by Organization</a>
-        <!--Place for background image #2-->
-        <img src="#" alt="Picture of ASPCA building">
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+\    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 </body>
 </html>
