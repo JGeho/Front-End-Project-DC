@@ -31,13 +31,19 @@ function loadPetData(data) {
   console.log(animalsAPI);
 
   // Variable names for tabs
-  const tabTitle = ["Information", "Characteristics", "Story", "Contact"];
+  const tabs = {"Information" : ['Breed', 'Age','Size','Color','Distance'], 
+                    "About" : ['Characteristics','Coat_length','House_trained','Health','Good_with'], 
+                    "Story" : 'Story',
+                    "Contact" : ['Organization','Location','Phone','Email']};
+  const tabKeys = Object.keys(tabs);
+  console.log(tabKeys);
   const gridDiv = document.getElementById("petResults");
+  
   // Remove previous data 
-  // document.getElementById("petResults").innerHTML = '';
+  // TODO: document.getElementById("petResults").innerHTML = '';
   
   // Iterate over the results
-  for (let i = 0; i < 3; i ++) {
+  for (let i = 0; i < 1; i ++) {
     // Create Col
     const colDiv = document.createElement("div");
     colDiv.className = "col";
@@ -48,37 +54,64 @@ function loadPetData(data) {
     cardDiv.className = "card";
     colDiv.appendChild(cardDiv);
 
-    // Create image
+    // Append Image & Card Body to card class
     const imgDiv = document.createElement("img");
-    imgDiv.src="./images/cat404.jpeg"
     imgDiv.className = "card-img-top";
+    imgDiv.src="./images/cat404.jpeg"
     imgDiv.alt="Card image cap";
-    cardDiv.append(imgDiv);
-
-    // Create card body
     const cardBody = document.createElement("div")
     cardBody.className = "card-body";
-    cardDiv.append(cardBody);
-
+    cardDiv.append(imgDiv, cardBody); // Append both divs to the card div
+    
     // Create tabs
     const divTabs = document.createElement("div");
     divTabs.id = "tabs";
     divTabs.className = "tabs";
-    divTabs.appendChild(cardBody);
+    cardBody.appendChild(divTabs);
 
     // Create tab names
     const ulDiv = document.createElement("ul");
-    ulDiv.appendChild(divTabs);
-
-    for (j in tabTitle) {
+    tabList.class = "list-group list-group-flush";
+    divTabs.appendChild(ulDiv);
+    for (j in tabKeys) {
       var a = document.createElement("a");
       var liDiv = document.createElement("li");
-      a.textContent = tabTitle[j];
+      a.textContent = tabKeys[j];
       let tabName = "tab-" + String([j]);
       a.setAttribute("href", tabName);
+      liDiv.appendChild(a);
+      ulDiv.appendChild(liDiv); 
     }
-    
-    /* 
+
+    var tabDiv = document.createElement("div");
+    let tabName = "tab-" + String([0]);
+    tabDiv.id = tabName;
+    divTabs.append(tabDiv)
+
+    for (let m = 0; m < 4; m++) {
+      var tabItem = document.createElement("li");
+      tabItem.class = "list-group-item";
+      tabItem.innerHTML = String([m]);
+      tabList.append(tabItem);
+    }
+    tabDiv.appendChild(tabList);
+  }
+}
+
+    /* Fill tab information
+    for (k in tabKeys) {
+      var tabDiv = document.createElement("div");
+      let tabName = "tab-" + String([j]);
+      tabDiv.id = tabName;
+      var tabList = document.createElement("ul");
+      for (l in (Object.values(tabs[k]))) {
+        var tabItem = document.createElement("li");
+        tabItem.class = "list-group-item";
+        tabItem.innerHTML = tabs[k][l] + ": ";
+        tabList.append(tabItem);
+      }
+      tabDiv.appendChild(tabList);
+      */
 
   
     // const ul = document.createElement("ul");
@@ -86,33 +119,6 @@ function loadPetData(data) {
     // const li = document.createElement("li");
     // const a = document.createElement("a");
     // a.
-
-    */
-
-  
-  }
-}
-  
-
-  
-  /*
-
-
-  gridDiv.appendChild(rowDiv);
-  let colDiv = document.createElement("div");
-  rowDid.append(colDiv);
-  let cardDiv = document.createElement("div");
-  cardDiv.class = "card text-white bg-primary mb-3";
-  colDiv.appendChild(cardDiv);
-  let imgDiv = document.createElement("img");
-  imgDiv.src = "../images/cat404.jpeg"
-  imgDiv.class = "card-img-top";
-  imgDiv.append(cardDiv);
-  let cardBody = document.createElement("div");
-  cardBody.class = "card-body";
-  cardBody.appned(cardDiv);
-
-  
 
   // Iterate over API Query, show information
   // TODO: Confirm that image works and doesn't 404 when loaded
