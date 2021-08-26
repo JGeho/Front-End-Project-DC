@@ -12,8 +12,12 @@
     width: 100%
 }
 
+body {
+    background-color: #219ebc;
+}
+
 .navbar{
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .navbar-brand{
