@@ -28,18 +28,76 @@ function animalDataForm() {
 function loadPetData(data) {
   console.log('Pull data from API call');
   let animalsAPI = data['animals'];
-  let length = animalsAPI.length;
   console.log(animalsAPI);
-  
+
+  // Variable names for tabs
+  const tabTitle = ["Information", "Characteristics", "Story", "Contact"];
+  const gridDiv = document.getElementById("petResults");
   // Remove previous data 
-  // TODO: Gettign error on removing previous data
-  // document.getElementById("gridDv").innerHTML = "";
+  // document.getElementById("petResults").innerHTML = '';
+  
+  // Iterate over the results
+  for (let i = 0; i < 3; i ++) {
+    // Create Col
+    const colDiv = document.createElement("div");
+    colDiv.className = "col";
+    gridDiv.appendChild(colDiv);
+
+    // Create Card
+    const cardDiv = document.createElement("div");
+    cardDiv.className = "card";
+    colDiv.appendChild(cardDiv);
+
+    // Create image
+    const imgDiv = document.createElement("img");
+    imgDiv.src="./images/cat404.jpeg"
+    imgDiv.className = "card-img-top";
+    imgDiv.alt="Card image cap";
+    cardDiv.append(imgDiv);
+
+    // Create card body
+    const cardBody = document.createElement("div")
+    cardBody.className = "card-body";
+    cardDiv.append(cardBody);
+
+    // Create tabs
+    const divTabs = document.createElement("div");
+    divTabs.id = "tabs";
+    divTabs.className = "tabs";
+    divTabs.appendChild(cardBody);
+
+    // Create tab names
+    const ulDiv = document.createElement("ul");
+    ulDiv.appendChild(divTabs);
+
+    for (j in tabTitle) {
+      var a = document.createElement("a");
+      var liDiv = document.createElement("li");
+      a.textContent = tabTitle[j];
+      let tabName = "tab-" + String([j]);
+      a.setAttribute("href", tabName);
+    }
+    
+    /* 
+
+  
+    // const ul = document.createElement("ul");
+    // ul.appendChild(divTabs);
+    // const li = document.createElement("li");
+    // const a = document.createElement("a");
+    // a.
+
+    */
+
+  
+  }
+}
+  
+
   
   /*
 
-  let gridDiv = document.getElementById("gridDiv");
-  let rowDiv = document.createElement("div");
-  rowDiv.class = "row";
+
   gridDiv.appendChild(rowDiv);
   let colDiv = document.createElement("div");
   rowDid.append(colDiv);
