@@ -21,7 +21,8 @@ This is our first DigitalCrafts boot-camp group project.  This project is a fron
 ### API
 
 1) The Petfinder API
-2) HTTP/JSON API (pending)
+2) The Cat Api - https://thecatapi.com
+3) HTTP/JSON API (pending)
 
 Deployment: Netlify
 www.KoolKatsAdoptions.com
