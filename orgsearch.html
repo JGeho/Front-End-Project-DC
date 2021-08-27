@@ -11,6 +11,28 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>Organization Search</title>
+        <style>
+            .data-grid {
+                display: grid;
+                background-color: white;
+                grid-template-columns: auto auto auto;
+            }
+
+            .body {
+                display: flex;
+                flex-direction: "row";
+            }
+
+            .div {
+                text-align: center;
+                border-color: darkred;
+                row-gap: 20px;
+            }
+
+            #grey {
+                background-color: lightgray;
+            }
+        </style>
         <script>
             $( function() {
                 $( "#tabs" ).tabs();
@@ -70,7 +92,7 @@
                     <div class = "col-sm-2">
                         <p>
                             <label for="amount">Distance (miles):</label>
-                            <input type="text" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                            <input type="text" id="slider" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
                         </p>
                           <div class="slider"></div>
                     </div>
@@ -154,7 +176,11 @@
                     </div>                    
                 </form>
             </fieldset>
-            <div id = "card" class="card mb-3" style="max-width: 720px;">
+            <div class = "container">
+                <h4 id="title">Search Results</h4>
+                <div id="displayDiv" class="data-grid"></div>
+            </div>
+            <!-- <div id = "card" class="card mb-3" style="max-width: 720px;">
                 <div class="row g-0">
                     <div id="image" class="col-md-4">
                         <img src="..." class="img-fluid rounded-start" alt="...">
@@ -177,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
             <script src="./scripts/scripts.js"></script>
             <script src="./scripts/loadOrgData.js"></script>
