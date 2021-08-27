@@ -15,13 +15,26 @@
             $( function() {
                 $( "#tabs" ).tabs();
             } );  
+
+            $( function() {
+                $( ".slider" ).slider({
+                value:25,
+                min: 0,
+                max: 100,
+                step: 25,
+                slide: function( event, ui ) {
+                    $( ".amount" ).val(ui.value );
+                }
+                });
+                $( ".amount" ).val($( ".slider" ).slider( "value" ) );
+            } );
         </script>
     </head>
     <body>
         <!--NavBar Start-->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-              <a href="index.html" class="navbar-brand"><img src="images/sitelogo.png" width="75"></a>
+              <a href="index.html" class="navbar-brand"><img src="images/sitelogo.png" width="100"></a>
               <button class="navbar-toggler" type="button" data-target="navbarSupportedContent" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -37,7 +50,7 @@
                     <a href="petsearch.html" class="nav-link">Pet Search</a>
                   </li>
                   <li class="nav-item active">
-                    <a href="#" class="nav-link">About Us</a>
+                    <a href="about.html" class="nav-link">About Us</a>
                   </li>
                   </ul>
               </div>    
@@ -55,13 +68,11 @@
                         <input type="text" id="zip" class="form-control form-control-lg" placeholder="Zip Code" required pattern=[0-9]{5}>
                     </div>
                     <div class = "col-sm-2">
-                        <select id="distanceZip" class="form-select form-select-lg" aria-label="Default select example">                            
-                            <option selected disabled value>Distance</option>
-                            <option value="10">10 Miles</option>
-                            <option value="25">25 Miles</option>
-                            <option value="50">50 Miles</option>
-                            <option value="100">100 Miles</option>
-                        </select>
+                        <p>
+                            <label for="amount">Distance (miles):</label>
+                            <input type="text" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        </p>
+                          <div class="slider"></div>
                     </div>
                     <div class = "col-sm-2">
                         <button class="btn btn-primary btn-lg btn-block" type = "button" onclick="orgDataZip()">Submit</button>                 
@@ -132,13 +143,11 @@
                         </select>
                     </div>
                     <div class = "col-sm-2">
-                        <select id="distanceLocation" class="form-select form-select-lg" aria-label="Default select example">                            
-                            <option selected disabled value>Distance</option>
-                            <option value="10">10 Miles</option>
-                            <option value="25">25 Miles</option>
-                            <option value="50">50 Miles</option>
-                            <option value="100">100 Miles</option>
-                        </select>
+                        <p>
+                            <label for="amount">Distance (miles):</label>
+                            <input type="text" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        </p>
+                          <div class="slider"></div>
                     </div>
                     <div class = "col-sm-2">
                         <button class="btn btn-primary btn-lg btn-block" type="button" onclick="orgDataLocation()">Submit</button>                    
