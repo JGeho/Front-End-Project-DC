@@ -89,15 +89,13 @@
                     <div class = "col-sm-6">
                         <input type="text" id="zip" class="form-control form-control-lg" placeholder="Zip Code" required pattern=[0-9]{5}>
                     </div>
-                    <div class = "col-sm-2">
-                        <p>
-                            <label for="amount">Distance (miles):</label>
-                            <input type="text" id="slider" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                        </p>
-                          <div class="slider"></div>
+                    <div class = "col-sm-3 fs-5">
+                        <label for="amount">Distance (miles):</label>
+                        <input type="text" id="slider" class="amount" readonly style="border:1; font-weight:bold;">
+                        <div class="slider"></div>
                     </div>
-                    <div class = "col-sm-2">
-                        <button class="btn btn-primary btn-lg btn-block" type = "button" onclick="orgDataZip()">Submit</button>                 
+                    <div class = "col-sm-2 px-4">
+                        <button class="btn btn-success btn-lg btn-block" type = "button" onclick="orgDataZip()">Submit</button>                 
                     </div>
                 </form>
                 <div class="py-1 fs-4">
@@ -164,15 +162,13 @@
                             <option value="WY">Wyoming</option>
                         </select>
                     </div>
-                    <div class = "col-sm-2">
-                        <p>
-                            <label for="amount">Distance (miles):</label>
-                            <input type="text" class="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                        </p>
-                          <div class="slider"></div>
+                    <div class = "col-sm-3 fs-5">
+                        <label for="amount">Distance (miles):</label>
+                        <input type="text" class="amount" readonly style="border:1; font-weight:bold;">
+                    <div class="slider"></div>
                     </div>
-                    <div class = "col-sm-2">
-                        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="orgDataLocation()">Submit</button>                    
+                    <div class = "col-sm-2 px-4">
+                        <button class="btn btn-success btn-lg btn-block" type="button" onclick="orgDataLocation()">Submit</button>                    
                     </div>                    
                 </form>
             </fieldset>
