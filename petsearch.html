@@ -1,25 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Search</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pet Search</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles\style.css">
+    </head>
+    <body>
+        <!--NavBar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+            <a href="index.html" class="navbar-brand"><img src="images/sitelogo.png" width="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="orgsearch.html" class="nav-link">Organization Search</a>
+                </li>
+                <li class="nav-item">
+                  <a href="petsearch.html" class="nav-link">Pet Search</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link">About Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--NavBar End-->
+        <!--Header-->
+        <h1 class="fw-bold" style="text-align: center; color: #023047">Your Best Friend Awaits</h1>
+            <div class="container">
+            <form id="petForm" name="petForm">
+                <div class="form-group">
+                <div class="py-1" id="animalField" name="animalField">
+                    <label class="fs-4" for="animal">Pet Type</label>
+                    <select name="animal" id="animalselect" class="form-control form-control-lg mb-3">
+                        <option selected value="select_pet_type">-Select Pet Type-</option>
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                    </select>
+                </div>
+                <div class="py-1" id="genderField" name="genderField">
+                    <label class="fs-4" for="gender">Gender</label><br>
+                        <input type="radio" name="gender" id ="gender" value="Male">Male</input>
+                        <input type="radio" name="gender" id="gender" value="Female">Female</input>
+                        <input type="radio" name="gender" id="gender" value="male,female">Male or Female</input>
+                </div>
+                <div id="locationField" name="locationField">
+                    <label class="py-1 fs-4" for="location">Location</label>
+                        <input type="text" id="zip" class="form-control form-control-lg" placeholder="Enter your Zip code" required pattern="[0-9]{5}">
+                </div>
+                <br>
+                <button class="btn btn-success" type ="button" onclick="animalDataForm()">Submit</button>
+            </form>
+            <script src="./scripts/scripts.js"></script>
+            <script src="./scripts/loadPetData.js"></script>
+            <br>
+            <br>
+            <span class="fs-4">Search results for: <span id= "formQueryParamters"></span>
+            <div class="container-fluid">
+                <div id = "gridDiv" class = "data-grid">
 
-</head>
-<body>
-    <header>
-        <h1>Adoption Project Title</h1>
-        <h3>Our Mission Statement/Tagline</h3>
-    </header>
-    <div>
-        <a href="index.html" role="menuitem" class="navigation-list_item">Back to Home</a>
-    </div>
-    <div>
-        <a href="orgsearch.html" role="menuitem" class="navigation-list_item">Search by Organization</a>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+    </body>
 </html>

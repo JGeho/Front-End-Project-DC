@@ -26,7 +26,7 @@ function parameters(objects) {
             parametersString += "&";
         }
     }
-    return console.log(parametersString);
+    console.log(parametersString);
 }
 
 const objects = {'limit': 100, 'street': '','location': 94040,'distance': 50};
