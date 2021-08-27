@@ -85,3 +85,13 @@ img.imagePet {
 .title {
     font-weight: bold;
 }
+
+li.results {
+    list-style-type: circle;
+    line-height: 1rem;
+    font-weight: normal;
+}
+
+p.title {
+    font-weight: bold;
+}
