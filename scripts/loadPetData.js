@@ -27,23 +27,20 @@ function animalDataForm() {
 // Loading Pet Information from API Call  
 function loadPetData(data) {
   console.log('Pull data from API call');
-  let animalsAPI = data['animals'];
+  const animalsAPI = data['animals'];
   console.log(animalsAPI);
 
   // Variable names for tabs
-  const tabs = {"Information" : ['Breed', 'Age','Size','Color','Distance'], 
+  const tabs = {"Information" : ['Name','Breed','Age','Size','Color','Distance'], 
                     "About" : ['Characteristics','Coat_length','House_trained','Health','Good_with'], 
-                    "Story" : 'Story',
+                    "Story" : ['Story'],
                     "Contact" : ['Organization','Location','Phone','Email']};
-  const tabKeys = Object.keys(tabs);
-  console.log(tabKeys);
   const gridDiv = document.getElementById("petResults");
   
   // Remove previous data 
   // TODO: document.getElementById("petResults").innerHTML = '';
   
-  // Iterate over the results
-  for (let i = 0; i < 1; i ++) {
+  for (let i = 0; i < 3; i++) {
     // Create Col
     const colDiv = document.createElement("div");
     colDiv.className = "col";
@@ -57,46 +54,94 @@ function loadPetData(data) {
     // Append Image & Card Body to card class
     const imgDiv = document.createElement("img");
     imgDiv.className = "card-img-top";
-    imgDiv.src="./images/cat404.jpeg"
-    imgDiv.alt="Card image cap";
+    imgDiv.className = "imagePet";
+    
+    let PetImages = animalsAPI[i]['photos'];
+    // Check image of pet
+    imgDiv.src= checkImage(PetImages)
+    imgDiv.alt="Pet Image";
+    cardDiv.append(imgDiv);
+    // Append card body
     const cardBody = document.createElement("div")
     cardBody.className = "card-body";
-    cardDiv.append(imgDiv, cardBody); // Append both divs to the card div
-    
-    // Create tabs
-    const divTabs = document.createElement("div");
-    divTabs.id = "tabs";
-    divTabs.className = "tabs";
-    cardBody.appendChild(divTabs);
+    cardDiv.append(cardBody);
 
-    // Create tab names
-    const ulDiv = document.createElement("ul");
-    tabList.class = "list-group list-group-flush";
-    divTabs.appendChild(ulDiv);
-    for (j in tabKeys) {
-      var a = document.createElement("a");
-      var liDiv = document.createElement("li");
-      a.textContent = tabKeys[j];
-      let tabName = "tab-" + String([j]);
-      a.setAttribute("href", tabName);
-      liDiv.appendChild(a);
-      ulDiv.appendChild(liDiv); 
+    const tabsKeys = Object.keys(tabs);
+    console.log(tabsKeys);
+
+    for (let k = 0; k < tabsKeys.length; k++) {
+      const key = document.createElement("p");
+      key.innerHTML = tabsKeys[k];
+      console.log(tabsKeys[k]);
+      cardBody.append(key);
+
+      // Determine values within object[k]
+      let tabsValues = Object.values(tabs[tabsKeys[k]]);
+      for (let v = 0; v < tabsValues.length; v++){
+        const ul = document.createElement("ul");
+        key.append(ul);
+        const value = document.createElement("li");
+        value.innerHTML = tabsValues[v];
+        ul.append(value);
+        }
+      }
     }
-
-    var tabDiv = document.createElement("div");
-    let tabName = "tab-" + String([0]);
-    tabDiv.id = tabName;
-    divTabs.append(tabDiv)
-
-    for (let m = 0; m < 4; m++) {
-      var tabItem = document.createElement("li");
-      tabItem.class = "list-group-item";
-      tabItem.innerHTML = String([m]);
-      tabList.append(tabItem);
-    }
-    tabDiv.appendChild(tabList);
   }
-}
+
+  function checkImage (Image) {
+        // Check that photo exist for animal
+        let picLength = Object.keys(Image).length;
+        // console.log(picLength);
+        if (picLength >= 1) { // If more than one photo exists
+            let src = animalsAPI[i]['primary_photo_cropped']['small'];
+            console.log(photos['small']);
+          } else {
+            let src = "../images/imageNA.jpg";
+          }
+        return src
+        // imageDiv.onerror = imageError(imageDiv); //  TODO: If image fails to load, trouble shoot 4040
+  }
+    /* 
+    // Create Bootstrap Accordion 
+    
+    // Create Accordion tabs and Information
+    var acHolder = document.createElement("div");
+    acHolder.className = "accordion";
+    acHolder.id = "Pet";
+    cardBody.append(acHolder);
+
+    // Create Accordion item + header
+    var acItem = document.createElement("div");
+    acItem.className = "accordion-item";
+    var ach2 = document.createElement("h2");
+    ach2.className = "accordion-header";
+    ach2.id = "headingOne";
+    acDiv.append(acItem, ach2);
+
+    // Create button
+    var acButton = document.createElement("button");
+    acButton.className = "accordion-button";
+    acButton.type = "button";
+    acButton.setAttribute('data-bs-toggle="collapse" ');
+    acButton.setAttribute('aria-expanded="true" ');
+    acButton.setAttribute('aria-controls="collapseOne" ');
+    acButton.innerHTML = "Information";
+    ach2.appendChild(acButton);
+
+    // Create info box
+    var acCollapse = document.createElement("div");
+    acCollapse.id = "collapseOne";
+    acCollapse.className = "accordion-collapse collapse show";
+    acCollapse.setAttribute('aria-labelledby="headingOne" ');
+    acCollapse.setAttribute('data-bs-parent="#accordionExample" ');
+    acDiv.append(acCollapse);
+
+    // Create info children
+    acBody = document.createElement("div");
+    acBody.className = "accordion-body";
+    acBody.innerHTML = "test";
+    
+    */
 
     /* Fill tab information
     for (k in tabKeys) {
@@ -133,17 +178,7 @@ function loadPetData(data) {
     
     const imageDiv = document.createElement("img");
     imageDiv.id = "imagePet";
-    // Check that photo exist for animal
-    let photos = animalsAPI[i]['photos'];
-    let picLength = Object.keys(photos).length;
-    // console.log(picLength);
-    if (picLength >= 1) { // If more than one photo exists
-        imageDiv.src = animalsAPI[i]['primary_photo_cropped']['small'];
-        console.log(photos['small']);
-      } else {
-        imageDiv.src = "../images/imageNA.jpg";
-      }
-    // imageDiv.onerror = imageError(imageDiv); //  TODO: If image fails to load, trouble shoot 4040
+
     colDiv.appendChild(imageDiv);
     // Load information about pet
     const colDiv = document.createElement("col");  
@@ -168,3 +203,36 @@ function imageError(imageDiv) {
 
     // Load Information
   // console.log(animalsAPI[0]['photos']);
+
+  /* Old code for making Tabs in jQuery 
+      // Create tabs
+    const divTabs = document.createElement("div");
+    divTabs.id = "tabs";
+    divTabs.className = "tabs";
+    cardBody.appendChild(divTabs);
+
+    // Create list of tabs 
+    const ulDiv = document.createElement("ul");
+    divTabs.appendChild(ulDiv);
+    for (j in tabKeys) {
+      var a = document.createElement("a");
+      var liDiv = document.createElement("li");
+      a.textContent = tabKeys[j];
+      let tabName = "#tabs-" + String([j]);
+      a.setAttribute("href", tabName);
+      liDiv.appendChild(a);
+      ulDiv.appendChild(liDiv); 
+    }
+
+    // Input tab values
+    for (k in tabKeys) {
+      var innerTab = document.createElement("div");
+      let tabName = "tabs-" + String(k);
+      innerTab.id = tabName;
+      innerTab.className = "tabs"
+      divTabs.append(innerTab)
+      var tabItem = document.createElement("p");
+      tabItem.innerHTML = String(k);
+      innerTab.append(tabItem);
+      }
+      */

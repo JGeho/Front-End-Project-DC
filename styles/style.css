@@ -58,9 +58,11 @@ body {
 
 } */
 
-#imagePet {
+img.imagePet {
     max-width: 150px;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-img-top {
@@ -73,4 +75,13 @@ body {
 #petResults {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.title {
+    font-weight: bold;
 }
