@@ -22,6 +22,7 @@
         function displayCatData(apiResponse, divid){
             let gridDiv = document.getElementById("gridDiv");
             const imageDiv    = document.createElement("img");
+            imageDiv.id = "catPic";
             imageDiv.src = apiResponse[0]['url'];
             gridDiv.appendChild(imageDiv);
         }        
@@ -85,12 +86,16 @@
           </div>
         </div>
       </div>
+      <br>
       <!--Extra pics or bonus section-->
-      <button onclick="loadCatImage('https://api.thecatapi.com/v1/images/search')">
-        Load Random Cat Pictures!
-      </button>
+      <div class="container py-3">
+        <button type="button" class=" btn btn-success" id="catButton" onclick="loadCatImage('https://api.thecatapi.com/v1/images/search')">
+          Load Random Cat Pictures!
+        </button>
+      </div>
       <div class="container"> 
-            <div class="data-grid-container" id="gridDiv">
+            <div class="data-grid-container" id="gridDiv"></div>
+      </div>
 
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
