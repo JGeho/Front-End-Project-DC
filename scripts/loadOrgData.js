@@ -1,11 +1,13 @@
 function orgDataZip() { // Capture form parameters for Location Zip
     let zipValue = document.getElementById("zip").value;
-    let distanceValue = document.getElementById("distanceZip").value;
+    let distanceValue = document.getElementById("slider").value;
     let formObject = {
         'location' : zipValue,
         'distance' : distanceValue
     }
     // console.log(formObject); // DEBUG
+    // spanDiv = document.getElementById('formQueryParamters');
+    // spanDiv.innerHTML = JSON.stringify(formObject);
     let callType = "organizations/";
     callPetAPI(callType, formObject);
 }
@@ -13,13 +15,15 @@ function orgDataZip() { // Capture form parameters for Location Zip
 function orgDataLocation() { // Capture form parameters for City, State 
     let cityValue = document.getElementById("city").value;
     let stateValue = document.getElementById("state").value;
-    let distanceValue = document.getElementById("distanceLocation").value;
+    let distanceValue = document.getElementById("slider").value;
     let formObject = {
         'location' : cityValue + ', ' + stateValue,
         'distance' : distanceValue
     }
-    let callType = "organizations/";
     // console.log(formObject); // DEBUG
+    // spanDiv = document.getElementById('formQueryParamters');
+    // spanDiv.innerHTML = JSON.stringify(formObject);
+    let callType = "organizations/";
     callPetAPI(callType, formObject);
 }
 
@@ -28,45 +32,71 @@ function loadOrgData(data) {
     let orgAPI = data['organizations'];
     let length = orgAPI.length;
     console.log(orgAPI);
-    let cardDiv = document.getElementById('card');
-    let tabsDiv = document.getElementById('tabs');
-    let displayDiv = document.getElementById('tabs-1');
-    let missionDiv = document.getElementById('tabs-2');
-    let linkDiv = document.getElementById('tabs-3');
-    let photoDiv = document.getElementById('image');
     
     for (let i = 0 ; i < length ; i++) {
-        cardDiv.appendChild(tabsDiv);
-        tabsDiv.appendChild(displayDiv);
-        tabsDiv.appendChild(missionDiv);
-        tabsDiv.appendChild(linkDiv);
-        cardDiv.appendChild(photoDiv);
-        // displayDiv.append(colDiv);
+        let displayDiv = document.getElementById("displayDiv");
+        const rowDiv = document.createElement('div');
 
-        const imageDiv = document.createElement("img");
-        imageDiv.src = orgAPI[i]['photos'].small;
-        photoDiv.appendChild(imageDiv);
+        // Checking to see if seperate containers are being created
+        if (i % 2 === 0) {
+            rowDiv.id = "grey";
+        }
+        // Creating column effect within each row
+        displayDiv.append(rowDiv);
+        const row2Div = document.createElement('div');
+        displayDiv.append(row2Div)
+        const row3Div = document.createElement('div');
+        displayDiv.append(row3Div);
+
+        let picArrayLength = orgAPI[i]['photos'].length;
+            if (picArrayLength > 1) {
+                picSrc = orgAPI[i]['photos'][0]['medium'];
+            } else if (picArrayLength == 0) {
+                picSrc = "../assets/cat404.jpeg";
+            } else {
+                picSrc = orgAPI[i]['photos']['medium'];
+            }
+
+            // TODO: If image doesn't load properly, then return a funny 404 image
+            const imageDiv = document.createElement("img");
+            imageDiv.id = "imagePet";
+            imageDiv.src = picSrc;
+            rowDiv.appendChild(imageDiv);
+
+       
         
-        const nameDiv = document.createElement("div");
+        let nameDiv = document.createElement("h4");
         nameDiv.innerHTML = orgAPI[i]['name'];
         console.log(orgAPI[i]['name']);
-        displayDiv.appendChild(nameDiv);
+        row2Div.appendChild(nameDiv);
 
-        const emailDiv = document.createElement("div");
+        let emailDiv = document.createElement("div");
         emailDiv.innerHTML = orgAPI[i]['email'];
-        displayDiv.appendChild(emailDiv);
+        row2Div.appendChild(emailDiv);
 
-        const phoneDiv = document.createElement("div");
+        let phoneDiv = document.createElement("div");
         phoneDiv.innerHTML = orgAPI[i]['phone'];
-        displayDiv.appendChild(phoneDiv);
+        row2Div.appendChild(phoneDiv);
 
-        const urlDiv = document.createElement("div");
-        urlDiv.innerHTML = orgAPI[i]['url'];
-        linkDiv.appendChild(urlDiv);
+        // Created a button to link to URL
+        let urlDiv = document.createElement("button");
+        urlDiv.textContent = ("Push for More Info");
+        urlDiv.addEventListener("click", function(){
+            location = orgAPI[i]['url'];
+        });
+        row2Div.appendChild(urlDiv);
 
-        const msDiv = document.createElement("div");
-        msDiv.innerHTML = orgAPI[i]['mission_statement'];
-        missionDiv.appendChild(msDiv);
+        // 
+        let missionStatement = orgAPI[i]['mission_statement'];
+        if (missionStatement == null) {
+            mission = "No Statement Provided";
+        } else {
+            mission = orgAPI[i]['mission_statement'];
+        }
+
+        let msDiv = document.createElement("div");
+        msDiv.innerHTML = mission;
+        row3Div.appendChild(msDiv);
 
     }
 }
