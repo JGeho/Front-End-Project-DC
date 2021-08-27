@@ -32,5 +32,5 @@ www.KoolKatsAdoptions.com
 
 - Scott Henderson
 - Justin Geho <img src="./images/JustinPic.jpg" alt="Justin Pic" width="30">
-- Teyon Price
+- Teyon Price <img src="./images/pic.jpg" alt="Teyon Pic" width="30">
 - Charles Eldridge
