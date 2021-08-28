@@ -6,7 +6,7 @@
 This is our first DigitalCrafts boot-camp group project.  This project is a front-end pet adoption app.  The app will provide the following features:
 1) Home page will contain links that allow users to search by type of pet or organization.
 2) Type of pet page will have form information that will narrow down search and return results.
-3) Organization page will give a list of facilities within location criteria.  With selection of facility showing available pets. 
+3) Organization page will give a list of facilities within location criteria.
 4) A pet adoption form will be available via link.
 
 ### Technologies
