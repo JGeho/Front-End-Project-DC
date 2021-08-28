@@ -14,8 +14,12 @@
         <style>
             .data-grid {
                 display: grid;
+                text-align: center;
+                margin: auto;
                 background-color: white;
-                grid-template-columns: auto auto auto;
+                border: 3px solid darkred;
+                row-gap: 20px;
+                grid-template-columns: 30% 40% 30%;
             }
 
             .body {
@@ -25,12 +29,20 @@
 
             .div {
                 text-align: center;
-                border-color: darkred;
+                margin: auto;
+                width: 25%;
                 row-gap: 20px;
             }
 
             #grey {
-                background-color: lightgray;
+                background-color: rgb(119, 105, 105);
+            }
+
+            img.imagePet {
+                max-width: 250px;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
         <script>
@@ -176,7 +188,7 @@
                     </div>                    
                 </form>
             </fieldset>
-            <div class = "container">
+            <div class = "card">
                 <h4 id="title">Search Results</h4>
                 <div id="displayDiv" class="data-grid"></div>
             </div>

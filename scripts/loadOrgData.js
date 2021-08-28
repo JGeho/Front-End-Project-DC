@@ -52,20 +52,20 @@ function loadOrgData(data) {
             if (picArrayLength > 1) {
                 picSrc = orgAPI[i]['photos'][0]['medium'];
             } else if (picArrayLength == 0) {
-                picSrc = "../assets/cat404.jpeg";
+                picSrc = "./images/cat404.jpeg";
             } else {
-                picSrc = orgAPI[i]['photos']['medium'];
+                picSrc = orgAPI[i]['photos'][0]['medium'];
             }
 
             // TODO: If image doesn't load properly, then return a funny 404 image
             const imageDiv = document.createElement("img");
-            imageDiv.id = "imagePet";
+            imageDiv.className = "imagePet";
             imageDiv.src = picSrc;
             rowDiv.appendChild(imageDiv);
 
        
         
-        let nameDiv = document.createElement("h4");
+        let nameDiv = document.createElement("h5");
         nameDiv.innerHTML = orgAPI[i]['name'];
         console.log(orgAPI[i]['name']);
         row2Div.appendChild(nameDiv);
