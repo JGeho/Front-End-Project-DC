@@ -44,8 +44,10 @@ function loadOrgData(data) {
         // Creating column effect within each row
         displayDiv.append(rowDiv);
         const row2Div = document.createElement('div');
+        row2Div.className = "div";
         displayDiv.append(row2Div)
         const row3Div = document.createElement('div');
+        row3Div.className = "div";
         displayDiv.append(row3Div);
 
         let picArrayLength = orgAPI[i]['photos'].length;
