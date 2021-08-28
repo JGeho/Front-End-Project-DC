@@ -3,7 +3,6 @@
 
 <img src = "./images/puss_in_boots_sad_eyes.jpg" alt = "sad cat big eyes" width = "400">
 
-
 This is our first DigitalCrafts boot-camp group project.  This project is a front-end pet adoption app.  The app will provide the following features:
 1) Home page will contain links that allow users to search by type of pet or organization.
 2) Type of pet page will have form information that will narrow down search and return results.
@@ -31,7 +30,7 @@ www.KoolKatsAdoptions.com
 
 ### Team Members
 
-- Scott Henderson
+- Scott Henderson <img src="./images/ScottH.jpeg" alt="Scott_Henderson_Pic" width="30"> [Github](https://github.com/smhenderson89)
 - Justin Geho <img src="./images/JustinPic.jpg" alt="Justin Pic" width="30">
 - Teyon Price <img src="./images/pic.jpg" alt="Teyon Pic" width="30">
 - Charles Eldridge

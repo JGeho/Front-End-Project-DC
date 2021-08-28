@@ -1,7 +1,9 @@
 /* CSS Styling for the Front-End Project */
 
-body {
-    background-color: #219ebc;
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 #header{
@@ -55,10 +57,47 @@ body {
 
 }
 
+img.imagePet {
+    max-width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-img-top {
+    max-width: 250px;
+}
+
 .image-container {
     display: block;
     max-width: 300;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#petResults {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.title {
+    font-weight: bold;
+}
+
+li.results {
+    list-style-type: circle;
+    line-height: 1rem;
+    font-weight: normal;
+}
+
+p.title {
+    font-weight: bold;
 }
 
 .overlay {
