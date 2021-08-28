@@ -33,4 +33,4 @@ www.KoolKatsAdoptions.com
 - Scott Henderson <img src="./images/ScottH.jpeg" alt="Scott_Henderson_Pic" width="30"> [Github](https://github.com/smhenderson89)
 - Justin Geho <img src="./images/JustinPic.jpg" alt="Justin Pic" width="30">
 - Teyon Price <img src="./images/pic.jpg" alt="Teyon Pic" width="30">
-- Charles Eldridge
+- Charles Eldridge <img src="./images/celd.jpg" alt="Charles" width="30">
