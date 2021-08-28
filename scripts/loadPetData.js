@@ -1,6 +1,6 @@
 function animalDataForm() {
     let petValue = document.getElementById("animalselect").value;
-    console.log(petValue);
+    // console.log(petValue);
     let genderValue = document.querySelector('input[id="gender"]:checked').value;
     let zipValue = document.getElementById("zip").value;
     let sortValue = 'distance';
@@ -11,7 +11,7 @@ function animalDataForm() {
         'sort': sortValue
     }
     //Call api
-    console.log(formObject); // DEbug to rest return of object
+    // console.log(formObject); // DEbug to rest return of object
     // Display search parameters to user
     spanDiv = document.getElementById('formQueryParamters');
     let sQuery = "";
@@ -29,7 +29,7 @@ function loadPetData(data) {
   console.log('Pull data from API call');
   const animalsAPI = data['animals'];
   lenApi = animalsAPI.length;
-  console.log(animalsAPI);
+  // console.log(animalsAPI);
 
   // Variable names for tabs
   const tabs = {"Information" : ['name','breeds','age','size','colors','distance'], 
@@ -59,7 +59,7 @@ function loadPetData(data) {
                     'email' : animalsAPI[i]['contact']['email']
                   };
 
-    console.log(apiLookup);
+    // console.log(apiLookup);
 
     // Create Col
     const colDiv = document.createElement("div");
@@ -168,7 +168,7 @@ function loadPetData(data) {
   function goodWith(value) {
     sReturn = "Good with ";
     valueResults = [value['cats'], value['children'], value['dogs']];
-    console.log(valueResults);
+    // console.log(valueResults);
     return sReturn
 }
 
