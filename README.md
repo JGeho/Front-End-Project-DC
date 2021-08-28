@@ -1,4 +1,4 @@
-# Cool Cats Adoption!
+# Kool Kats Adoptions!
 ## Yes you can adopt dogs too!
 
 <img src = "./images/puss_in_boots_sad_eyes.jpg" alt = "sad cat big eyes" width = "400">
