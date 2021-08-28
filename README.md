@@ -19,18 +19,27 @@ This is our first DigitalCrafts boot-camp group project.  This project is a fron
 
 ### API
 
-1) The Petfinder API
+1) The Petfinder API - https://www.petfinder.com/developers/v2/docs/
 2) The Cat Api - https://thecatapi.com
-3) HTTP/JSON API (pending)
+3) HTTP/JSON API
 
 Deployment: Netlify
-www.KoolKatsAdoptions.com
+[www.KoolKatsAdoptions.com](www.KoolKatsAdoptions.com)
 
 ### Screen Shots
+Main Home page
+
+<img src = "./images/readme/mainpage.jpg" alt = "main page" width = "600" height = "auto">
+
+Pet Search
+<img src = "./images/readme/petsearch.jpg" alt = "main page" width = "600" height = "auto">
+
+Pet Search Results
+<img src = "./images/readme/petsearchresults.jpg" alt = "main page" width = "600" height = "auto">
 
 ### Team Members
 
-- Scott Henderson <img src="./images/ScottH.jpeg" alt="Scott_Henderson_Pic" width="30"> [Github](https://github.com/smhenderson89)
+- Scott Henderson <img src="./images/ScottH.jpeg" alt="Scott_Henderson_Pic" width="30">
 - Justin Geho <img src="./images/JustinPic.jpg" alt="Justin Pic" width="30">
 - Teyon Price <img src="./images/pic.jpg" alt="Teyon Pic" width="30">
 - Charles Eldridge
