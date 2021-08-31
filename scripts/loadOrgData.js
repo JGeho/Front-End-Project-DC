@@ -5,7 +5,6 @@ function orgDataZip() { // Capture form parameters for Location Zip
         'location' : zipValue,
         'distance' : distanceValue
     }
-    // console.log(formObject); // DEBUG
     // spanDiv = document.getElementById('formQueryParamters');
     // spanDiv.innerHTML = JSON.stringify(formObject);
     let callType = "organizations/";
@@ -20,7 +19,6 @@ function orgDataLocation() { // Capture form parameters for City, State
         'location' : cityValue + ', ' + stateValue,
         'distance' : distanceValue
     }
-    // console.log(formObject); // DEBUG
     // spanDiv = document.getElementById('formQueryParamters');
     // spanDiv.innerHTML = JSON.stringify(formObject);
     let callType = "organizations/";
@@ -31,7 +29,6 @@ function orgDataLocation() { // Capture form parameters for City, State
 function loadOrgData(data) {
     let orgAPI = data['organizations'];
     let length = orgAPI.length;
-    console.log(orgAPI);
     
     for (let i = 0 ; i < length ; i++) {
         let displayDiv = document.getElementById("displayDiv");
@@ -69,7 +66,6 @@ function loadOrgData(data) {
         
         let nameDiv = document.createElement("h5");
         nameDiv.innerHTML = orgAPI[i]['name'];
-        console.log(orgAPI[i]['name']);
         row2Div.appendChild(nameDiv);
 
         let emailDiv = document.createElement("div");
