@@ -25,7 +25,6 @@ function callPetAPI(callType, formObject) {
     }).then(function (resp) {
         return resp.json(); // Return API response as JSON
     }).then(function (data) {
-        console.log('token', data); // console.log the API data
         // Second API callback to retreive results the server
         apiInfo(callType, data, formObject); // Second API to get data
     }).catch(function (err) {

@@ -1,6 +1,5 @@
 function animalDataForm() {
     let petValue = document.getElementById("animalselect").value;
-    console.log(petValue);
     let genderValue = document.querySelector('input[id="gender"]:checked').value;
     let zipValue = document.getElementById("zip").value;
     let sortValue = 'distance';
@@ -11,7 +10,6 @@ function animalDataForm() {
         'sort': sortValue
     }
     //Call api
-    console.log(formObject); // DEbug to rest return of object
     // Display search parameters to user
     spanDiv = document.getElementById('formQueryParamters');
     let sQuery = "";
@@ -26,10 +24,8 @@ function animalDataForm() {
 
 // Loading Pet Information from API Call  
 function loadPetData(data) {
-  console.log('Pull data from API call');
   const animalsAPI = data['animals'];
   lenApi = animalsAPI.length;
-  console.log(animalsAPI);
 
   // Variable names for tabs
   const tabs = {"Information" : ['name','breeds','age','size','colors','distance'], 
@@ -59,8 +55,6 @@ function loadPetData(data) {
                     'email' : animalsAPI[i]['contact']['email']
                   };
 
-    console.log(apiLookup);
-
     // Create Col
     const colDiv = document.createElement("div");
     colDiv.className = "col";
@@ -87,7 +81,6 @@ function loadPetData(data) {
     cardDiv.append(cardBody);
 
     const tabsKeys = Object.keys(tabs);
-    // console.log(tabsKeys); DEBUG
 
     for (let k = 0; k < tabsKeys.length; k++) {
       const key = document.createElement("p");
@@ -113,10 +106,8 @@ function loadPetData(data) {
 
   // Check if Pet has a valid picture, otherwise show image not available
   function checkImageValid (pet) {
-    // console.log(pet);
     if (typeof(pet) === 'object') { // Check if pet image is an object
       src = pet['small'];
-      // console.log(src);
     } else {
       src = "../images/imageNA.jpg";
     }
@@ -168,7 +159,6 @@ function loadPetData(data) {
   function goodWith(value) {
     sReturn = "Good with ";
     valueResults = [value['cats'], value['children'], value['dogs']];
-    console.log(valueResults);
     return sReturn
 }
 
